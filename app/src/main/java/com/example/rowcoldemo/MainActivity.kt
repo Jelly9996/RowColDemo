@@ -20,12 +20,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.rowcoldemo.ui.theme.RowColDemoTheme
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.width
-
-
+import androidx.compose.foundation.layout.paddingFrom
+import androidx.compose.ui.layout.LastBaseline
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,15 +49,21 @@ fun TextCell(text: String, modifier: Modifier = Modifier) {
         fontWeight = FontWeight.Bold,
         textAlign = TextAlign.Center)
 }
-
 @Composable
 fun MainScreen(modifier: Modifier = Modifier) {
-    Row(horizontalArrangement = Arrangement.SpaceEvenly,
-        modifier = modifier.width(1000.dp)
-    ) {
-        TextCell("1")
-        TextCell("2")
-        TextCell("3")
+    Row {
+        Text(
+            text = "Large Text\n\nMore Text",
+            Modifier.alignBy(LastBaseline),
+            fontSize = 40.sp,
+            fontWeight = FontWeight.Bold
+        )
+        Text(
+            text = "Small Text",
+            Modifier.alignByBaseline(),
+            fontSize = 32.sp,
+            fontWeight = FontWeight.Bold,
+        )
     }
 }
 
