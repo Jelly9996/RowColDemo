@@ -20,6 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.rowcoldemo.ui.theme.RowColDemoTheme
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Column
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,17 +51,35 @@ fun TextCell(text: String, modifier: Modifier = Modifier) {
 
 @Composable
 fun MainScreen(modifier: Modifier = Modifier) {
-    Row(modifier) {
-        TextCell("1")
-        TextCell("2")
-        TextCell("3")
+    Column(modifier) {
+        Row {
+            Column {
+                TextCell("1")
+                TextCell("2")
+                TextCell("3")
+            }
+            Column {
+                TextCell("4")
+                TextCell("5")
+                TextCell("6")
+            }
+            Column {
+                TextCell("7")
+                TextCell("8")
+            }
+        }
+        Row {
+            TextCell("9")
+            TextCell("10")
+            TextCell("11")
+        }
     }
 }
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    RowColDemoTheme {
-        MainScreen()
+    @Preview(showBackground = true)
+    @Composable
+    fun GreetingPreview() {
+        RowColDemoTheme {
+            MainScreen()
+        }
     }
-}
