@@ -21,9 +21,8 @@ import androidx.compose.ui.unit.sp
 import com.example.rowcoldemo.ui.theme.RowColDemoTheme
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Column
-import androidx.compose.ui.Alignment
-import androidx.compose.foundation.layout.width
-
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.Arrangement
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,8 +54,8 @@ fun TextCell(text: String, modifier: Modifier = Modifier) {
 @Composable
 fun MainScreen(modifier: Modifier = Modifier) {
     Column(
-        horizontalAlignment = Alignment.End,
-        modifier = modifier.width(250.dp)
+        verticalArrangement = Arrangement.Bottom,
+        modifier = modifier.height(400.dp)
     ) {
         TextCell("1")
         TextCell("2")
