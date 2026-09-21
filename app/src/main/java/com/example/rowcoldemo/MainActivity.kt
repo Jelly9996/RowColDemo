@@ -23,6 +23,9 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.width
+
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,9 +56,8 @@ fun TextCell(text: String, modifier: Modifier = Modifier) {
 
 @Composable
 fun MainScreen(modifier: Modifier = Modifier) {
-    Column(
-        verticalArrangement = Arrangement.Bottom,
-        modifier = modifier.height(400.dp)
+    Row(horizontalArrangement = Arrangement.SpaceEvenly,
+        modifier = modifier.width(1000.dp)
     ) {
         TextCell("1")
         TextCell("2")
